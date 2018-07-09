@@ -6,13 +6,18 @@ import java.util.List;
 public class Runner {
 
     public static void main(String[] args) {
-        Golfer golfer = new Golfer("Mark", "Henderson", 40);
-        DBGolfer.save(golfer);
+        Golfer golfer1 = new Golfer("Mark", "Henderson", 40);
+        DBGolfer.save(golfer1);
 
-        List<Golfer> pirates = DBGolfer.getAll();
+        Golfer golfer2 = new Golfer("William", "Bell", 50);
+        DBGolfer.save(golfer2);
 
-        Golfer mark = DBGolfer.find(golfer.getId());
+        List<Golfer> golfers = DBGolfer.getAll();
 
-        System.out.print(mark.getFirstName());
+        Golfer golfer = DBGolfer.find(golfer1.getId());
+
+        Golfer golferGee = DBGolfer.findByFirstName(golfer1.getFirstName());
+
+        System.out.print(golfer1.getFirstName());
     }
 }

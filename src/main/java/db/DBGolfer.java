@@ -61,13 +61,13 @@ public class DBGolfer {
     }
 
 
-    public static Golfer findByName(String name){
+    public static Golfer findByFirstName(String firstName){
         Golfer result = null;
         session = HibernateUtil.getSessionFactory().openSession();
 
         try {
             Criteria cr = session.createCriteria(Golfer.class);
-            cr.add(Restrictions.eq("name", name));
+            cr.add(Restrictions.eq("firstName", firstName));
             result = (Golfer)cr.uniqueResult();
 
         } catch (HibernateException e) {

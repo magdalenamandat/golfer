@@ -13,6 +13,8 @@ public class Golfer {
         private int age;
         private int id;
 
+        public Golfer(){}
+
         public Golfer(String firstName, String lastName, int age) {
             this.firstName = firstName;
             this.lastName = lastName;

@@ -18,6 +18,6 @@ public class Runner {
 
         Golfer golferGee = DBGolfer.findByFirstName(golfer1.getFirstName());
 
-        System.out.print(golfer1.getFirstName());
+        System.out.print(golferGee.getFirstName());
     }
 }
